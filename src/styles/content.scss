@@ -1,0 +1,202 @@
+.wrapper {
+  background-color: $color-white;
+
+  .content {
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    min-height: 455px;
+    margin: 36px 40px;
+    border-radius: 10px;
+    box-shadow: $shadow-black25;
+
+    @media (max-width: 1440px) {
+      box-shadow: none;
+    }
+
+    @media (max-width: 768px) {
+      margin: 24px;
+    }
+
+    @media (max-width: 375px) {
+      margin-top: 14px;
+      margin-bottom: 14px;
+    }
+
+    &__left,
+    &__right {
+      flex-basis: 50%;
+      background-color: $color-flash-white;
+
+      @media (max-width: 1200px) {
+        flex-basis: 100%;
+        max-width: none;
+      }
+    }
+
+    &__left {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      max-width: 800px;
+      padding: 72px;
+
+      @media (max-width: 1200px) {
+        padding: 24px;
+      }
+
+      @media (max-width: 375px) {
+        padding-bottom: 18px;
+      }
+
+      &-title {
+        font-size: 1.875rem;
+        line-height: 160%;
+        font-weight: 500;
+        text-shadow: $shadow-black25;
+        -webkit-text-stroke: 1px $color-black;
+        color: $color-dark-blue;
+
+        @media (max-width: 1440px) {
+          font-size: 1.625rem;
+          text-shadow: none;
+          -webkit-text-stroke: unset;
+        }
+
+        @media (max-width: 768px) {
+          font-size: 1.25rem;
+        }
+
+        @media (max-width: 375px) {
+          font-size: 1.0625rem;
+        }
+      }
+
+      &-text {
+        max-width: 538px;
+        margin-top: 18px;
+        font-size: 1.0625rem;
+        line-height: 160%;
+        color: $color-gray;
+
+        @media (max-width: 1200px) {
+          max-width: none;
+        }
+
+        @media (max-width: 768px) {
+          font-size: 0.9375rem;
+        }
+
+        @media (max-width: 375px) {
+          margin-top: 14px;
+          font-size: 0.8125rem;
+        }
+      }
+
+      &-button {
+        display: flex;
+        justify-content: space-between;
+        column-gap: 12px;
+        align-items: center;
+        width: 100%;
+        max-width: 341px;
+        min-height: 68px;
+        margin-top: 36px;
+        padding: 12px 12px 12px 24px;
+        border: none;
+        border-radius: 60px;
+        font-family: $font-family-base;
+        font-size: 1.125rem;
+        font-weight: 500;
+        line-height: 160%;
+        text-wrap: nowrap;
+        color: $color-white;
+        background-color: $color-cobald-blue;
+
+        @media (max-width: 768px) {
+          max-width: 261px;
+          min-height: 56px;
+          margin-top: 24px;
+          padding: 10px 10px 10px 18px;
+          font-size: 0.9375rem;
+        }
+
+        @media (max-width: 375px) {
+          max-width: 100%;
+          margin-top: 19px;
+        }
+
+        &::after {
+          content: '';
+          flex-shrink: 0;
+          width: 44px;
+          height: 44px;
+          border-radius: 50%;
+          background-color: $color-white;
+          background-image: $url-arrow;
+          background-position: center;
+          background-repeat: no-repeat;
+
+          @media (max-width: 768px) {
+            width: 36px;
+            height: 36px;
+          }
+        }
+      }
+    }
+
+    &__right {
+      flex-grow: 1;
+      max-width: 1016px;
+      background-image: $url-background-910;
+      background-repeat: no-repeat;
+      background-position: left;
+
+      @media (max-width: 1814px) {
+        background-position: center;
+        background-size: cover;
+      }
+
+      @media (max-width: 1600px) {
+        background-image: $url-background-684;
+      }
+
+      @media (max-width: 1200px) {
+        height: 560px;
+        background-image: $url-background-684;
+      }
+
+      @media (max-width: 768px) {
+        height: 360px;
+        background-image: $url-background-720;
+      }
+
+      @media (max-width: 624px) {
+        height: 300px;
+        background-image: $url-background-327;
+      }
+
+      @media (max-width: 450px) {
+        height: 220px;
+      }
+    }
+  }
+}
+
+.modal {
+  display: none;
+}
+
+.modal.show {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  padding: 14px 24px;
+  top: 0;
+  left: 0;
+  background-color: $color-black44;
+}
